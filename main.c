@@ -25,7 +25,6 @@ int main(){
    fgets(bufi,256,stdin);
    if(c=='a'){
       while(fgets(bufi,256,stdin)){
-       // printf("%s",bufi);
          int counter=0;
          for (size_t i = 0; i <= 256 && bufi[i]!='\n'; i++)
          {
