@@ -2,10 +2,7 @@
 #include "txtfind.h"
 #include <string.h>
 
-
-
 int main(){
-    int count=0;
     char c =' ';
     char bufi[LINE];
     fgets(bufi,256,stdin);

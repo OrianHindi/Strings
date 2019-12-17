@@ -5,4 +5,4 @@ looking for the word cat
 the program should print also cats 
 after cats crat and lcat are printed
 the program shouldnt printthe word
-hnjkbhujhuk caats
+print the word caats
