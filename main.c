@@ -27,13 +27,15 @@ int main(){
    fgets(bufi,256,stdin);
    if(c='a'){
       while(fgets(bufi,256,stdin)){
+       // printf("%s",bufi);
          int counter=0;
          for (size_t i = 0; i <= 256 && bufi[i]!='\n'; i++)
          {
-            if(bufi[i]!=' ' && bufi[i]!= '\t' && bufi[i]!= '\n'){
+            if(bufi[i]!=' ' && bufi[i]!= '\t' && bufi[i]!= '\n' && bufi[i]!='\0'){
               secondWord[counter]=bufi[i];  
+              counter++;
             }
-            if(bufi[i]== ' '|| bufi[i] =='\t' || bufi[i]=='\n' || bufi[i]=='\0'){
+            else{
                if(substring(secondWord,firstWord)){
                   printf("%s",bufi);
                   counter=0;
@@ -41,9 +43,8 @@ int main(){
                }
                counter=0;
             }
-            counter++;
+            
          }        
-         count++;
    }
 }
    return 0;
