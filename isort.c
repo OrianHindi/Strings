@@ -3,21 +3,21 @@
 
 void shift_element(int* arr,int i){
     while(i>0){
-        int temp = *(arr+i);
-        *(arr+1+i)=temp;
+        int temp = *(arr-1+i);
+        *(arr+i)=temp;
         i--;
     }
 }
 void insertion_sort(int* arr, int len){
-    for(size_t i =0;i<len;i++){
-        for (size_t j = 0; j < i; j++){
-            if(*(arr+i)< *(arr+j)){
-                int temp = *(arr+i);
-                shift_element((arr+j-1),i-j);
-                *(arr+j)=temp;   
-            }
-        }   
+    for (size_t i = 0; i < len-1; i++){
+    for (size_t j = i+1; j < len; j++){
+      if((arr+i)>(arr+j)){
+        int temp=*(arr+j);
+        shift_element(arr+i,j-i);
+        *(arr+i)=temp;
+      }
     }
+  }
 }
 int main(){
     int arr [12];
