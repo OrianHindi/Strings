@@ -8,7 +8,7 @@ int main(){
     int count=0;
     char c ='a';
     char bufi[LINE];
-   fgets(bufi,256,stdin);
+    fgets(bufi,256,stdin);
    char firstWord[WORD];
    char secondWord[WORD];
    int index =0;
@@ -19,25 +19,23 @@ int main(){
       firstWord[index]=bufi[index];
       index++;
    }
+   firstWord[index]='\0';
    index++;
    c=bufi[index];
    printf("%c \n",c);
    printf("%s \n",firstWord);
    fgets(bufi,256,stdin);
    if(c='a'){
-      while(count<5){
-         fgets(bufi,256,stdin);
-         int len=(int)strlen(bufi);
-         printf("BUFI LENGTH IS: %d",len);
+      while(fgets(bufi,256,stdin)){
          int counter=0;
-         for (size_t i = 0; i < len; i++)
+         for (size_t i = 0; i <= 256 && bufi[i]!='\n'; i++)
          {
             if(bufi[i]!=' ' && bufi[i]!= '\t' && bufi[i]!= '\n'){
               secondWord[counter]=bufi[i];  
             }
-            if(bufi[i]== ' '|| bufi[i] =='\t' || bufi[i]=='\n'){
+            if(bufi[i]== ' '|| bufi[i] =='\t' || bufi[i]=='\n' || bufi[i]=='\0'){
                if(substring(secondWord,firstWord)){
-                  printf("%s \n",bufi);
+                  printf("%s",bufi);
                   counter=0;
                   break;
                }
