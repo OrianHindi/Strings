@@ -6,7 +6,7 @@
 
 int main(){
     int count=0;
-    char c ='a';
+    char c =' ';
     char bufi[LINE];
     fgets(bufi,256,stdin);
    char firstWord[WORD];
@@ -22,10 +22,8 @@ int main(){
    firstWord[index]='\0';
    index++;
    c=bufi[index];
-   printf("%c \n",c);
-   printf("%s \n",firstWord);
    fgets(bufi,256,stdin);
-   if(c='a'){
+   if(c=='a'){
       while(fgets(bufi,256,stdin)){
        // printf("%s",bufi);
          int counter=0;
@@ -46,6 +44,27 @@ int main(){
             
          }        
    }
+}
+if(c=='b'){
+   while(fgets(bufi,256,stdin)){
+      int counter=0;
+      for (size_t i = 0; i <= 256 && bufi[i]!='\n'; i++)
+      {
+      if(bufi[i]!=' ' && bufi[i]!='\t' && bufi[i]!= '\n' && bufi[i]!= '\0'){
+         secondWord[counter]=bufi[i];
+         counter++;
+      }
+      else{
+         if(similar(secondWord,firstWord)){
+            printf("%s\n",secondWord);
+         }
+         counter=0;
+         memset(secondWord,0,strlen(secondWord));
+      }
+      }
+      
+   }
+
 }
    return 0;
 }
