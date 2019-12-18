@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include "txtfind.h"
 #include <string.h>
-
-int Getline(char s[]){
-    int count=0;
-    while(s[count]!='\n'){
-        count++;
-    }
-    return count;
-} 
+ 
 int substring(char* str1,char* str2){
 
     int count =0;
