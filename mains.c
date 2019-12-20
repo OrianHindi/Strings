@@ -4,7 +4,7 @@
 
 int main(){
 
-int arr [50];
+int arr [SIZE];
     int i = 0;
     while (i<50)
     {

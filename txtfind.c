@@ -7,7 +7,14 @@ int substring(char* str1,char* str2){
     int count =0;
     size_t len1=strlen(str1);
     size_t len2=strlen(str2);
-   if(len2>len1) return 0;
+    if(len2==len1){
+        for (size_t i = 0; i < len1; i++)
+        {
+            if(str1[i]!=str2[i])return 0;
+        }
+         return 1;
+    }
+    if(len2>len1) return 0;
     for (size_t i = 0; i < len1; i++){
         if(str1[i]==str2[0] && i+len2<len1){
             for (size_t j = 0; j <= len2; j++){
